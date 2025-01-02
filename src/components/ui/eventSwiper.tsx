@@ -40,7 +40,7 @@ const EventHeader = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-[300px] sm:h-[400px] md:h-[500px] w-full"
+        className="h-[500px] w-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="w-full h-full">

@@ -77,8 +77,7 @@ export default function EventPage() {
       <nav className="fixed w-full bg-white shadow-sm z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-blue-600 hover:transform hover:scale-110 transition-transform duration-300">
-            2025 內場尾牙,{" "}
-            {currentUser?.name ? currentUser.nickname : "你哪位？"}
+            Hi, {currentUser?.name ? currentUser.nickname : "你哪位？"}
           </div>
           <div className="md:hidden">
             {isMenuOpen ? (
@@ -110,12 +109,6 @@ export default function EventPage() {
             >
               活動流程
             </a>
-            {/* <a
-              href="#register"
-              className="hover:text-blue-600 text-black font-semibold hover:transform hover:scale-110 transition-transform duration-300"
-            >
-              立即報名
-            </a> */}
           </div>
         </div>
         {isMenuOpen && (
@@ -130,28 +123,11 @@ export default function EventPage() {
               >
                 ✧活動流程✧
               </a>
-              {/* <a href="#register" className="py-2 hover:text-blue-600">
-                立即報名
-              </a> */}
             </div>
           </div>
         )}
       </nav>
 
-      {/* 主視覺區域 */}
-      {/* <header className="pt-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-        <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-2xl md:text-6xl font-bold mb-6">
-            ✧蛇來好彩頭，福氣好年冬✧
-          </h1>
-          <Link
-            href="/"
-            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors"
-          >
-            不用報名，騙你點ㄉ按鈕
-          </Link>
-        </div>
-      </header> */}
       <EventHeader />
 
       {/* 活動資訊 */}
@@ -256,59 +232,12 @@ export default function EventPage() {
         </div>
       </section>
 
-      {/* 報名表單 */}
-      {/* <section id="register" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">立即報名</h2>
-          <Card className="max-w-md mx-auto">
-            <CardContent className="pt-6">
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1">姓名</label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="請輸入姓名"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">
-                    電子郵件
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="請輸入電子郵件"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1">
-                    手機號碼
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="請輸入手機號碼"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  確認報名
-                </button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section> */}
-
       {/* 頁尾 */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>
-            © 2025 NeiChang Tail-Tooth. Made with lots of ❤️❤️❤️. All rights
-            reserved.
+            © 2025 NeiChang Tail-Tooth. <br /> Made with lots of ❤️❤️❤️. <br />{" "}
+            All rights reserved.
           </p>
         </div>
       </footer>
