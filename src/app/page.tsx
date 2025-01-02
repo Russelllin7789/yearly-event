@@ -1,16 +1,74 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { Calendar, Clock, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import EventHeader from "@/components/ui/eventSwiper";
+import { validateUser } from "@/lib/validation";
 
 export default function EventPage() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [currentUser, setCurrentUser] = useState<{
+    name: string;
+    birthday: string;
+    nickname: string;
+  } | null>(null);
 
   if (!isLoggedIn) {
-    return <div>You have not logged in!</div>;
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-black">
+        <div className="text-8xl font-bold text-red-300">內</div>
+        <label
+          htmlFor="username"
+          className="text-2xl font-bold text-white mt-20 flex items-center justify-center"
+        >
+          LINE 暱稱
+          <input
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="ml-4 max-w-[200px] text-black text-base p-2"
+            placeholder="例如：Russell Lin"
+          />
+        </label>
+        <label
+          htmlFor="password"
+          className="text-2xl font-bold text-white mt-4 flex items-center justify-center"
+        >
+          西元生日
+          <input
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="ml-7 max-w-[200px] text-black text-base p-2"
+            placeholder="例如：19880809"
+          />
+        </label>
+        <button
+          onClick={() => {
+            const user = validateUser(username, password) as {
+              name: string;
+              birthday: string;
+              nickname: string;
+            };
+            if (user) {
+              setCurrentUser(user);
+              setIsLoggedIn(true);
+            } else {
+              alert("在哈囉？怎麼會輸錯！");
+            }
+          }}
+          className="text-2xl font-bold text-white mt-8 flex items-center justify-center bg-blue-600 rounded-lg py-2 px-6"
+        >
+          登入
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -19,7 +77,8 @@ export default function EventPage() {
       <nav className="fixed w-full bg-white shadow-sm z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-blue-600 hover:transform hover:scale-110 transition-transform duration-300">
-            2025 內場尾牙
+            2025 內場尾牙,{" "}
+            {currentUser?.name ? currentUser.nickname : "你哪位？"}
           </div>
           <div className="md:hidden">
             {isMenuOpen ? (
@@ -63,13 +122,13 @@ export default function EventPage() {
           <div className="md:hidden bg-white border-t">
             <div className="container mx-auto px-4 py-2 flex flex-col space-y-2">
               <a href="#about" className="py-2 hover:text-blue-600 text-black">
-                活動資訊
+                ✧活動資訊✧
               </a>
               <a
                 href="#schedule"
                 className="py-2 hover:text-blue-600 text-black"
               >
-                活動流程
+                ✧活動流程✧
               </a>
               {/* <a href="#register" className="py-2 hover:text-blue-600">
                 立即報名
@@ -80,7 +139,7 @@ export default function EventPage() {
       </nav>
 
       {/* 主視覺區域 */}
-      <header className="pt-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+      {/* <header className="pt-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
         <div className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-2xl md:text-6xl font-bold mb-6">
             ✧蛇來好彩頭，福氣好年冬✧
@@ -92,13 +151,14 @@ export default function EventPage() {
             不用報名，騙你點ㄉ按鈕
           </Link>
         </div>
-      </header>
+      </header> */}
+      <EventHeader />
 
       {/* 活動資訊 */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-black">
-            活動資訊
+            ✧活動資訊✧
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
@@ -142,7 +202,7 @@ export default function EventPage() {
       <section id="schedule" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-black">
-            活動流程
+            ✧活動流程✧
           </h2>
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
