@@ -1,4 +1,3 @@
-// src/app/page.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -33,9 +32,6 @@ export default function EventPage() {
                 <ChevronDown size={24} className="text-black" />
               </button>
             )}
-            {/* <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2">
-              <ChevronDown size={24} className="text-black" />
-            </button> */}
           </div>
           <div className="hidden md:flex space-x-6">
             <a
