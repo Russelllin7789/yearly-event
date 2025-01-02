@@ -6,7 +6,12 @@ import { Calendar, Clock, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function EventPage() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  if (!isLoggedIn) {
+    return <div>You have not logged in!</div>;
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -38,7 +43,7 @@ export default function EventPage() {
               href="#about"
               className="hover:text-blue-600 text-black font-semibold hover:transform hover:scale-110 transition-transform duration-300"
             >
-              關於活動
+              活動資訊
             </a>
             <a
               href="#schedule"
@@ -58,7 +63,7 @@ export default function EventPage() {
           <div className="md:hidden bg-white border-t">
             <div className="container mx-auto px-4 py-2 flex flex-col space-y-2">
               <a href="#about" className="py-2 hover:text-blue-600 text-black">
-                關於活動
+                活動資訊
               </a>
               <a
                 href="#schedule"
@@ -77,7 +82,7 @@ export default function EventPage() {
       {/* 主視覺區域 */}
       <header className="pt-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-2xl md:text-6xl font-bold mb-6">
             ✧蛇來好彩頭，福氣好年冬✧
           </h1>
           <Link
@@ -102,7 +107,7 @@ export default function EventPage() {
                 <CardTitle className="text-center">活動日期</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p>2025年1月12日</p>
+                <p className="font-bold text-xl">2025年1月12日</p>
               </CardContent>
             </Card>
             <Card>
@@ -111,7 +116,7 @@ export default function EventPage() {
                 <CardTitle className="text-center">活動時間</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p>18:00 - 22:00</p>
+                <p className="font-bold text-xl">18:00 - 22:00</p>
               </CardContent>
             </Card>
             <Card>
@@ -120,7 +125,13 @@ export default function EventPage() {
                 <CardTitle className="text-center">活動地點</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p>小樹屋</p>
+                <a
+                  href="https://maps.app.goo.gl/hehuyfgLVE6TPjvv6"
+                  target="_blank"
+                  className="text-blue-600 hover:underline text-xl font-bold"
+                >
+                  小樹屋
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -136,47 +147,47 @@ export default function EventPage() {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
               <div className="flex items-center justify-start pl-10 md:pl-20">
-                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center">
-                  18:00
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center text-xl">
+                  18:30
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">報到入場</h3>
-                  <p className="text-gray-600">想要蛇麼號 🐎</p>
+                  <h3 className="font-semibold text-black text-xl">尾牙表演</h3>
+                  <p className="text-gray-600">蛇麼都有萍有聚 🍀</p>
                 </div>
               </div>
               <div className="flex items-center justify-start pl-10 md:pl-20">
-                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center">
-                  18:10
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center text-xl">
+                  18:40
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">一月慶生</h3>
+                  <h3 className="font-semibold text-black text-xl">一月慶生</h3>
                   <p className="text-gray-600">蛇來富貴吃蛋糕 🍰</p>
                 </div>
               </div>
               <div className="flex items-center justify-start pl-10 md:pl-20">
-                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center">
-                  18:30
-                </div>
-                <div>
-                  <h3 className="font-semibold text-black">有獎問答</h3>
-                  <p className="text-gray-600">蛇麼問題都有</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-start pl-10 md:pl-20">
-                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center">
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center text-xl">
                   19:00
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">尾牙抽獎</h3>
+                  <h3 className="font-semibold text-black text-xl">有獎問答</h3>
+                  <p className="text-gray-600">內場通蛇出來 🐍</p>
+                </div>
+              </div>
+              <div className="flex items-center justify-start pl-10 md:pl-20">
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center text-xl">
+                  19:30
+                </div>
+                <div>
+                  <h3 className="font-semibold text-black text-xl">尾牙抽獎</h3>
                   <p className="text-gray-600">蛇麼攏賀 🦩</p>
                 </div>
               </div>
               <div className="flex items-center justify-start pl-10 md:pl-20">
-                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center">
-                  19:30
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg mr-4 w-24 text-center text-xl">
+                  20:00
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black">生命故事</h3>
+                  <h3 className="font-semibold text-black text-xl">生命故事</h3>
                   <p className="text-gray-600">把 mic 給佑佑 🎤</p>
                 </div>
               </div>
