@@ -152,7 +152,7 @@ export default function EventPage() {
                 <CardTitle className="text-center">活動時間</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="font-bold text-xl">18:00 - 22:00</p>
+                <p className="font-bold text-xl">18:30 - 22:00</p>
               </CardContent>
             </Card>
             <Card>
