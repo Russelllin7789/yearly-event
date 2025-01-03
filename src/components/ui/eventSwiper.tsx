@@ -60,7 +60,7 @@ const EventHeader = () => {
                 <div className="absolute inset-0 bg-black/50" />
               </div>
               <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center text-white">
-                <h1 className="text-2xl md:text-4xl font-bold mb-6 text-center">
+                <h1 className="text-2xl md:text-4xl mb-6 text-center">
                   ✧蛇來好彩頭，福氣好年冬✧
                 </h1>
                 <p className="text-xl mb-8 text-center">{slide.subtitle}</p>

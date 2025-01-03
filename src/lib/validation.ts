@@ -94,6 +94,11 @@ const users: { name: string; birthday: string; nickname: string }[] = [
     birthday: "19951010",
     nickname: "神神❤️",
   },
+  {
+    name: "Stewart",
+    birthday: "19871019",
+    nickname: "史寶❤️",
+  },
 ];
 
 export const validateUser = (

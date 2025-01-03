@@ -19,6 +19,9 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        mantou: ["MANTOU"],
+      },
     },
   },
   plugins: [],
