@@ -1,7 +1,7 @@
 const users: { name: string; birthday: string; nickname: string }[] = [
   {
     name: "Albert Chiang",
-    birthday: "19861029",
+    birthday: "19861009",
     nickname: "Albert❤️",
   },
   {
@@ -98,6 +98,11 @@ const users: { name: string; birthday: string; nickname: string }[] = [
     name: "Stewart",
     birthday: "19871019",
     nickname: "史寶❤️",
+  },
+  {
+    name: "Wei",
+    birthday: "19901021",
+    nickname: "小香❤️",
   },
 ];
 
