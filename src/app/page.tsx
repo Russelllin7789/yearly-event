@@ -48,7 +48,7 @@ export default function EventPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="ml-12 max-w-[200px] text-black text-base p-2"
-            placeholder="例如：19880809"
+            placeholder="例如：20240809"
           />
         </label>
         <button
